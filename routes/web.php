@@ -14,12 +14,16 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
-    $cache = app()->make('cache');
-    $cache->put('key', 'value', 60);
-
-    // dump(config('app.name'));
-    // dump(config('app.locale'));
-    // dump(config('database.connections'));
-    // dump(config('custom.custom_text'));
-    return view('welcome');
+    return view('hi', ['name' => 'John']);
 });
+
+// Route::get('/', function () {
+//     // $cache = app()->make('cache');
+//     // $cache->put('key', 'value', 60);
+//
+//     // dump(config('app.name'));
+//     // dump(config('app.locale'));
+//     // dump(config('database.connections'));
+//     // dump(config('custom.custom_text'));
+//     return view('welcome');
+// });
