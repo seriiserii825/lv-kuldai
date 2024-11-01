@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\Admin\ProductController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -17,13 +18,5 @@ Route::get('/', function () {
     return view('hi', ['name' => 'John']);
 });
 
-// Route::get('/', function () {
-//     // $cache = app()->make('cache');
-//     // $cache->put('key', 'value', 60);
-//
-//     // dump(config('app.name'));
-//     // dump(config('app.locale'));
-//     // dump(config('database.connections'));
-//     // dump(config('custom.custom_text'));
-//     return view('welcome');
-// });
+Route::get('/admin/products', [ProductController::class, 'index'])->name('admin.products.index');
+Route::get('/admin/products/create', [ProductController::class, 'create'])->name('admin.products.create');
